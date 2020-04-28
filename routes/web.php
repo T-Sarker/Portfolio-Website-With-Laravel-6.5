@@ -36,3 +36,18 @@ Route::post('/admin/logo/logo-save',[
 	'uses' => 'LogoController@saveLogo',
 	'as'   => 'save-logo'
 ]);
+
+Route::get('/admin/profile/add-profile-details',[
+	'uses' => 'ProfileController@saveProfile',
+	'as'   => 'add-profile-details'
+]);
+
+Route::post('/admin/profile/save-profile-details',[
+	'uses' => 'ProfileController@saveProfileDetails',
+	'as'   => 'save-profile-details'
+]);
+
+Route::get('/admin/profile/manage-profile-details',[
+	'uses' => 'ProfileController@showManageProfile',
+	'as'   => 'manage-profile-details'
+]);

@@ -17,8 +17,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('add-logo') }}">Add Logo</a></li>
-                            <li><a href="layout-one-column.html">Profile</a></li>
-                            <li><a href="layout-two-column.html">Two column</a></li>
+                            <li><a href="{{ route('add-profile-details') }}">Profile</a></li>
+                            <li><a href="{{ route('manage-profile-details') }}">Manage Profile</a></li>
                             <li><a href="layout-compact-nav.html">Compact Nav</a></li>
                             <li><a href="layout-vertical.html">Vertical</a></li>
                             <li><a href="layout-horizontal.html">Horizontal</a></li>

@@ -45,7 +45,7 @@
         <!-- Navbar Area -->
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" data-scroll href="#header-area">Flexi</a>
+                <a class="navbar-brand" data-scroll href="#header-area">My Portfolio</a>
                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="nav-btn">Menu</span>
                 </button>
