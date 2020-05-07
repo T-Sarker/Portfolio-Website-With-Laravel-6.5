@@ -9,6 +9,17 @@ class Profile extends Model
 
 	protected $fillable = ['profileName','profileCv','profileImage','profileSkill','profileEmail','myLocation','ProfileAge','dateOfBirth','profilePhone','profileCountry'];
 
+    private function uploadFiles($myFiles){
+
+        $fileName = $myFiles->getClientOriginalName();
+        $directory = "upload-images/profile-file/";
+
+        $myFiles->move($directory,$fileName);
+
+        return $directory.$fileName;
+
+    }
+
     public function insertProfileDetailsIntoDB($request){
 
     	
@@ -42,5 +53,59 @@ class Profile extends Model
 
     	$profile->save();
 
+    }
+
+    public function updateProfileDetails($request){
+
+        $profile = new Profile;
+        $datas = $profile->find($request->profileId);
+
+        $pCv = $request->file('profileCv');
+        $pImage = $request->file('profileImage');
+
+        if ($pCv && !$pImage) {
+            
+            unlink($datas->profileCv);
+            $cvPath = $this->uploadFiles($pCv);
+
+        }elseif (!$pCv && $pImage) {
+
+            unlink($datas->profileImage);
+            $imgPath = $this->uploadFiles($pImage);
+
+        }elseif ($pCv && $pImage) {
+            
+            unlink($datas->profileImage);
+            $imgPath = $this->uploadFiles($pImage);
+
+            unlink($datas->profileCv);
+            $cvPath = $this->uploadFiles($pCv);
+        }
+        if (isset($cvPath)) {
+            print_r($cvPath);
+        }
+        if (isset($imgPath)) {
+            
+            print_r($imgPath);
+        }
+
+        
+        $datas->profileName       = $request->profileName;
+        if(isset($cvPath)){
+            $datas->profileCv     = $cvPath;
+        }
+        if(isset($imgPath)){
+            $datas->profileImage     = $imgPath;
+        }
+        
+        $datas->profileSkill      = $request->profileSkill;
+        $datas->profileEmail      = $request->profileEmail;
+        $datas->profileAddress    = $request->myLocation;
+        $datas->ProfileAge        = $request->ProfileAge;
+        $datas->dateOfBirth       = $request->dateOfBirth;
+        $datas->profilePhone      = $request->profilePhone;
+        $datas->profileCountry    = $request->profileCountry;
+
+        $datas->save();
     }
 }

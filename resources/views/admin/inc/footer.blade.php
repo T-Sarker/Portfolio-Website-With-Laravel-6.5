@@ -18,7 +18,7 @@
     <script src="{{ asset('/') }}admin/js/custom.min.js"></script>
     <script src="{{ asset('/') }}admin/js/settings.js"></script>
     <script src="{{ asset('/') }}admin/js/gleek.js"></script>
-
+    
 </body>
 
 </html>

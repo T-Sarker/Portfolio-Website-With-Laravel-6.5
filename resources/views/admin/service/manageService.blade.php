@@ -14,31 +14,29 @@
 		@if(Session::get('message'))
 			<span class="alert alert-success">{{ Session::get('message') }}</span>
 		@endif
-		@if($myprofile !=null)
+		@if($services !=null)
+
 			<table class="table">
 			  <thead>
 			    <tr>
-			      <th scope="col">Image</th>
-			      <th scope="col">Name</th>
-			      <th scope="col">BirthDay</th>
-			      <th scope="col">Phone</th>
-			      <th scope="col">Email</th>
+			      <th scope="col">Icon</th>
+			      <th scope="col">Title</th>
+			      <th scope="col">Description</th>
 			      <th scope="col">Actions</th>
 			    </tr>
 			  </thead>
 			  <tbody>
+			  @foreach($services as $service)
 			    <tr>
-			      <td><img src="{{ asset('/') }}{{ $myprofile->profileImage }}" alt="{{ $myprofile->profileName }}" style="width:100px;"></td>
-			      <td>{{ $myprofile->profileName }}</td>
-			      <td>{{ $myprofile->dateOfBirth }}</td>
-			      <td>{{ $myprofile->profilePhone }}</td>
-			      <td>{{ $myprofile->profileEmail }}</td>
+			      <td><i class="{{ $service->serviceIcon }}"></i></td>
+			      <td>{{ $service->serviceTitle }}</td>
+			      <td>{{ $service->serviceDetails }}</td>
 			      <td>
-			      	<a href="{{ route('edit-profile-data',['id'=>$myprofile->id,'name'=>str_replace(' ', '-', $myprofile->profileName)]) }}" class="btn btn-warning">Edit</a>
+			      	<a href="{{ route('edit-service-data',['id'=>$service->id,'name'=>str_replace(' ', '-', $service->serviceTitle)]) }}" class="btn btn-warning">Edit</a>
 			      	<a href="" class="btn btn-danger">Delete</a>
 			      </td>
 			    </tr>
-			    
+			  @endforeach
 			  </tbody>
 			</table>
 			@else

@@ -28,4 +28,20 @@ class ProfileController extends Controller
     	return view('admin.profile.manageProfile',['myprofile'=> $profile]);
     }
 
+    public function editProfile($id,$name){
+
+        return view('admin.profile.edit-profile',[
+                    'profile' => Profile::find($id)
+            ]);
+    }
+
+    public function updateProfile(Request $request){
+
+        $profile = new Profile;
+
+        $profile->updateProfileDetails($request);
+
+        return redirect('/admin/profile/manage-profile-details')->with('message',"Update Done");
+    }
+
 }

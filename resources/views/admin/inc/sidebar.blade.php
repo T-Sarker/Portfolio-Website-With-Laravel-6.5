@@ -19,35 +19,36 @@
                             <li><a href="{{ route('add-logo') }}">Add Logo</a></li>
                             <li><a href="{{ route('add-profile-details') }}">Profile</a></li>
                             <li><a href="{{ route('manage-profile-details') }}">Manage Profile</a></li>
-                            <li><a href="layout-compact-nav.html">Compact Nav</a></li>
-                            <li><a href="layout-vertical.html">Vertical</a></li>
-                            <li><a href="layout-horizontal.html">Horizontal</a></li>
-                            <li><a href="layout-boxed.html">Boxed</a></li>
-                            <li><a href="layout-wide.html">Wide</a></li>
                             
-                            
-                            <li><a href="layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Apps</li>
+                    <li class="nav-label">Work Sections</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">About</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read</a></li>
-                            <li><a href="email-compose.html">Compose</a></li>
+                            <li><a href="{{ route('add-about') }}">Add About</a></li>
+                            <li><a href="{{ route('manage-about') }}">Manage About</a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
+                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Services</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="app-profile.html">Profile</a></li>
-                            <li><a href="app-calender.html">Calender</a></li>
+                            <li><a href="{{ route('add-service') }}">Add Service</a></li>
+                            <li><a href="{{ route('manage-service') }}">Manage Service</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Portfolio</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('add-protfolio-heading') }}">Add Heading</a></li>
+                            <li><a href="{{ route('add-protfolio-content') }}">Add Gallery</a></li>
+                            <li><a href="{{ route('manage-protfolio-content') }}">Manage Gallery</a></li>
                         </ul>
                     </li>
                     <li>
@@ -63,14 +64,14 @@
                             <li><a href="chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">UI Components</li>
+                    <li class="nav-label">Client Section</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Clients</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html">Accordion</a></li>
-                            <li><a href="ui-alert.html">Alert</a></li>
+                            <li><a href="{{ route('add-client') }}">Add Client</a></li>
+                            <li><a href="{{ route('manage-client') }}">Manage Client</a></li>
                             <li><a href="ui-badge.html">Badge</a></li>
                             <li><a href="ui-button.html">Button</a></li>
                             <li><a href="ui-button-group.html">Button Group</a></li>

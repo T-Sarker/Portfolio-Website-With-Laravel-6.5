@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Dashpin - Bootstrap Admin Dashboard HTML Template</title>
+    <title>Tapos | Login</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.html">
     <link href="{{ asset('/') }}admin/css/style.css" rel="stylesheet">
@@ -39,15 +39,15 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index-2.html"> <h4>WELCOME TAPOS</h4></a>
-        
+                                <h4>WELCOME TAPOS</h4>
+                                @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                 <form class="mt-5 mb-5 login-input" action="{{ route ('login') }}" method="POST">
                                 @csrf
                                     <div class="form-group">
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}">
-                                        @error('email')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">

@@ -14,31 +14,31 @@
 		@if(Session::get('message'))
 			<span class="alert alert-success">{{ Session::get('message') }}</span>
 		@endif
-		@if($myprofile !=null)
+		@if($clients !=null)
+
 			<table class="table">
 			  <thead>
 			    <tr>
 			      <th scope="col">Image</th>
 			      <th scope="col">Name</th>
-			      <th scope="col">BirthDay</th>
-			      <th scope="col">Phone</th>
-			      <th scope="col">Email</th>
+			      <th scope="col">Designation</th>
+			      <th scope="col">Message</th>
 			      <th scope="col">Actions</th>
 			    </tr>
 			  </thead>
 			  <tbody>
+			  @foreach($clients as $client)
 			    <tr>
-			      <td><img src="{{ asset('/') }}{{ $myprofile->profileImage }}" alt="{{ $myprofile->profileName }}" style="width:100px;"></td>
-			      <td>{{ $myprofile->profileName }}</td>
-			      <td>{{ $myprofile->dateOfBirth }}</td>
-			      <td>{{ $myprofile->profilePhone }}</td>
-			      <td>{{ $myprofile->profileEmail }}</td>
+			      <td><img src="{{ asset('/') }}{{ $client->clientImage }}" style="width:100px;" alt="{{ $client->clientName }}"></td>
+			      <td>{{ $client->clientName }}</td>
+			      <td>{{ $client->clientJob }}</td>
+			      <td>{{ $client->clientMessage }}</td>
 			      <td>
-			      	<a href="{{ route('edit-profile-data',['id'=>$myprofile->id,'name'=>str_replace(' ', '-', $myprofile->profileName)]) }}" class="btn btn-warning">Edit</a>
+			      	<a href="{{ route('edit-client-data',['id'=>$client->id,'name'=>str_replace(' ', '-', $client->clientName)]) }}" class="btn btn-warning">Edit</a>
 			      	<a href="" class="btn btn-danger">Delete</a>
 			      </td>
 			    </tr>
-			    
+			  @endforeach
 			  </tbody>
 			</table>
 			@else

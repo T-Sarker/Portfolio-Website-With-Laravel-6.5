@@ -11,6 +11,9 @@
 @section('body')
 	<div class="container-fluid mt-3">
 		<h3 class="mb-4">Add Profile Details</h3>
+		@if(Session::get('message'))
+			<span class="alert alert-success">Success</span>
+		@endif
 		<form action="{{ route('save-profile-details') }}" method="POST" enctype="multipart/form-data">
 		@csrf
 		  <div class="form-group">
@@ -22,8 +25,8 @@
 		    <input type="file" class="form-control" id="cv" accept=".pdf,.doc,.docx" name="profileCv">
 		  </div>
 		  <div class="form-group">
-		    <label for="cv">Image</label>
-		    <input type="file" class="form-control" id="cv" accept=".jpg,.png,.jpeg" name="profileImage">
+		    <label for="image">Image</label>
+		    <input type="file" class="form-control" id="image" accept=".jpg,.png,.jpeg" name="profileImage">
 		  </div>
 		  <div class="form-group">
 		    <label for="skill">Skill</label>
